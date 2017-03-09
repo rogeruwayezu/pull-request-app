@@ -33,12 +33,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort Products <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/products">All Products</a></li>
-                  <li><a href="/products?price=asc">Sort price from the lowest to the highest</a></li>
-                  <li><a href="/products?price=desc">Sort price form the highest to the lowest</a></li>
-                  <li><a href="/products/filter=200">Discount Items</a></li>
-                  <% Category.all.each do |category| %>
-                    <li><a href="/products/?category=<%= category.name %>"><%= category.name.capitalize %></a></li>
-                  <% end %>
+                  <li><a href="/products?price=asc"></a></li>
+                  <li><a href="/products?price=desc"></a></li>
+                  <li><a href="/products/filter=200"></a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Separated link</a></li>
                   <li role="separator" class="divider"></li>
@@ -52,14 +49,7 @@
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-              <% if current_user %>
-                            <li><%= link_to "Logout", "/logout"%></li>
-                            <li><%= link_to "Shoping Card", "/carted_products"%></li>
-                          <% else %>
-                            <li><%= link_to "Sign Up", "/signup" %></li>
-                            <li><%= link_to "Login", "/login" %></li>
-                          <% end %>
+            <ul class="nav navbar-nav navbar-right"> 
             </ul>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -68,14 +58,10 @@
       <% flash.each do |name, message| %>
         <div class="alert alert<%= name %> role="alert"><%= message %></div>
         
-      <% end %>
-      
-        
+      <% end %>  
       </div>
-      <%= yield %>
-                                                       
-                                                       
-                                                       </div>
+      <%= yield %>                                                     
+  </div>
   </body>
                                                        
  <footer>
